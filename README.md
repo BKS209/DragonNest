@@ -8,6 +8,23 @@
 4. 右击收纳盒自己的托盘入口可“全部还原”或“退出”。左键单击托盘入口可以收起面板。正常退出会归还图标，下次启动按原顺序重新收纳。
 5. 布局保存在 EXE 同目录的 layout.xml。请把程序放在非 C 盘的可写目录，移动时把 EXE 和 layout.xml 一起带走。结束进程后如果图标还没恢复，重新运行程序，再从入口菜单退出。
 
+
+### Inspiration / 灵感来源
+
+DragonNest is an independently developed Windows 10 system tray organizer, created with the assistance of OpenAI Codex.
+
+The project was inspired in part by [TrayNest](https://github.com/Wuyuhang0729/traynest), developed by Wuyuhang0729.
+
+DragonNest has its own implementation, feature scope, and Windows 10 compatibility goals. No source code from the referenced project was intentionally reused.
+
+---
+
+DragonNest 是一款借助 OpenAI Codex 独立开发的 Windows 10 系统托盘收纳工具。
+
+本项目的部分设计灵感来自 Wuyuhang0729 开发的 [TrayNest](https://github.com/Wuyuhang0729/traynest)。
+
+DragonNest 采用独立的实现方式、功能规划和 Windows 10 兼容性方案，开发过程中未有意复用参考项目的源代码。
+
 ## 1.1.1 更新
 
 - 面板外框按整格计算。100% 显示缩放时每格 40 像素，三行高 120 像素，三列三行为 120×120。
