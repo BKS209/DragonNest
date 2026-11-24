@@ -1,6 +1,6 @@
-# Win10 托盘收纳盒 1.1.1
+# DragonNest 1.1.5
 
-适用环境：Windows 10 22H2 x64（19045）、系统原生任务栏、系统自带的 .NET Framework 4.8。运行 TrayNest10.exe。左键点击“托盘收纳盒”入口可打开或收起面板。展开系统隐藏区时，收纳面板仍需手动打开。两个面板同时显示时，关闭系统隐藏区会收起收纳面板。右键打开所收纳应用的菜单时，即使系统隐藏区被关闭，收纳面板也会继续显示。之后点击桌面或其他窗口即可收起。拖动面板左边缘可改变每行图标数，拖动上边缘可改变行数。松手后按整格排列。按住其他空白处可移动窗口。
+适用环境：Windows 10 22H2 x64（19045）、系统原生任务栏、系统自带的 .NET Framework 4.8。运行 DragonNest.exe。左键点击“DragonNest”入口可打开或收起面板。展开系统隐藏区时，收纳面板仍需手动打开。两个面板同时显示时，关闭系统隐藏区会收起收纳面板。右键打开所收纳应用的菜单时，即使系统隐藏区被关闭，收纳面板也会继续显示。之后点击桌面或其他窗口即可收起。拖动面板左边缘可改变每行图标数，拖动上边缘可改变行数。松手后按整格排列。按住其他空白处可移动窗口。
 
 1. 先点任务栏小箭头展开系统隐藏区，再左键点击收纳盒入口，按住一个图标拖入收纳面板。拖动途中按住 Esc 可取消。
 2. 单击、双击、右键收纳项，可向原程序发送对应操作。面板优先使用程序在系统托盘中显示的图标，悬停显示程序名和图标编号。具体响应由原程序决定。
@@ -8,22 +8,25 @@
 4. 右击收纳盒自己的托盘入口可“全部还原”或“退出”。左键单击托盘入口可以收起面板。正常退出会归还图标，下次启动按原顺序重新收纳。
 5. 布局保存在 EXE 同目录的 layout.xml。请把程序放在非 C 盘的可写目录，移动时把 EXE 和 layout.xml 一起带走。结束进程后如果图标还没恢复，重新运行程序，再从入口菜单退出。
 
+## 1.1.5 更新
 
-### Inspiration / 灵感来源
+- 软件更名为 DragonNest。程序文件、托盘显示名称和发布压缩包采用新名称。
 
-DragonNest is an independently developed Windows 10 system tray organizer, created with the assistance of OpenAI Codex.
+## 1.1.4 更新
 
-The project was inspired in part by [TrayNest](https://github.com/Wuyuhang0729/traynest), developed by Wuyuhang0729.
+- 同一行相邻图标之间只显示一条插入线。鼠标从间隙两侧靠近，预览位置和松手后的顺序一致。
 
-DragonNest has its own implementation, feature scope, and Windows 10 compatibility goals. No source code from the referenced project was intentionally reused.
+## 1.1.3 更新
 
----
+- 盒内排序时直接在收纳面板绘制半透明图标和插入线，拖到外部时使用浮动预览。
+- 拖动引发系统隐藏区关闭时，收纳盒保持打开。盒内放下后尝试恢复系统隐藏区一次。主动关闭系统隐藏区仍会收起收纳盒。
+- Win10 验证了连续盒内排序、拖动中关闭后恢复、Esc 取消及主动关闭联动。
 
-DragonNest 是一款借助 OpenAI Codex 独立开发的 Windows 10 系统托盘收纳工具。
+## 1.1.2 更新
 
-本项目的部分设计灵感来自 Wuyuhang0729 开发的 [TrayNest](https://github.com/Wuyuhang0729/traynest)。
-
-DragonNest 采用独立的实现方式、功能规划和 Windows 10 兼容性方案，开发过程中未有意复用参考项目的源代码。
+- 拖入、盒内排序和拖回时均有半透明图标跟随鼠标。紫色插入线显示落点。松手、按 Esc 或失去鼠标捕获时清除预览。
+- 加强面板的背景模糊，降低底色遮盖程度。关闭 Windows 的透明效果或启用高对比度时使用纯色背景。
+- Win10 实测拖入、拖回、盒内排序、取消、预览清理以及毛玻璃和纯色模式。
 
 ## 1.1.1 更新
 
@@ -141,13 +144,13 @@ DragonNest 采用独立的实现方式、功能规划和 Windows 10 兼容性方
 | `src/` | 当前版本的程序源码和 Windows 清单 |
 | `tests/` | 托盘探针、拖放和布局验证源码 |
 | `build/` | 本地编译产物 |
-| `releases/` | 本地发布归档，含初版 0.0.0 至 1.1.1 |
+| `releases/` | 本地发布归档，含初版 0.0.0 至 1.1.5 |
 
 `build/` 和 `releases/` 已加入 Git 忽略规则。源码仓库可通过构建脚本生成程序，历史安装包可单独放在发布页面。
 
 ## 构建与验证
 
-运行 build.cmd 会使用 64 位 .NET Framework C# 编译器，生成 build/app/TrayNest10.exe。
+运行 build.cmd 会使用 64 位 .NET Framework C# 编译器，生成 build/app/DragonNest.exe。
 
 运行 build-tests.cmd 可将可选测试程序编译到 build/tests/。TrayProbe.exe 用自己创建的临时图标检查通知协议及点击回调；加 --roundtrip 还会短暂隐藏并还原两个现有应用图标。DragTest.exe 会在当前交互桌面移动鼠标、展开小箭头并拖动临时图标，请在桌面空闲时运行。测试使用独立的临时配置。
 
